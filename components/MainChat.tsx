@@ -44,7 +44,6 @@ const MainChat = () => {
         setMessage("");
 
         try {
-
           const response = await fetch("/chat", {
             method: "POST",
             headers: {"Content-Type": "application/json"},
@@ -82,56 +81,17 @@ const MainChat = () => {
 
                   const jsonObj = JSON.parse(jsonStr);
 
-                  console.log(jsonObj.answer);
-
                   assistantResponse += jsonObj.answer;
                 }
                 else if (match[3]) {
                   const jsonStr = match[3];
 
                   buffer = buffer.slice(match.index + jsonStr.length);
+
                   assistantResponse += JSON.parse(jsonStr).answer;
                 }
-              
 
-                // console.log("Match:", match);
-                // const jsonStr = match[0];
-                // buffer = buffer.slice(match.index + jsonStr.length);
-
-                // console.log("JSONstr:", jsonStr);
-                // const jsonObj  = JSON.parse(jsonStr);
-                // console.log("JSONobj:", jsonObj.answer);
-                // if(jsonObj.answer !== "") {
-                //   assistantResponse += jsonObj.answer;
-                // }
               }
-
-
-              // while(true) {
-
-              //   if(buffer.trim().length === 0) break;
-                
-              //   const startIndx = buffer.indexOf(`{"answer":`);
-              //   if(startIndx === -1) break;
-
-              //   const endIndx = buffer.indexOf('}', startIndx) + 1;
-              //   if (endIndx === -1) break;
-                
-              //   const jsonStr = buffer.slice(startIndx, endIndx);
-              //   buffer = buffer.slice(endIndx);
-                
-              //   if(jsonStr.endsWith('}')) {
-              //     console.log(jsonStr);
-              //     const jsonObj = JSON.parse(jsonStr);
-              //     if(jsonObj.answer != "") {
-              //       assistantResponse += jsonObj.answer;
-              //     }
-              //   }
-              //   else {
-              //     buffer = jsonStr + buffer;
-              //   }
-
-              // }
 
               setHistory((oldHistory) => {
                 const updatedHistory = [...oldHistory];
@@ -154,18 +114,6 @@ const MainChat = () => {
           console.log("Fetch Error:", error);
         }
 
-        // fetch("/chat", {
-        // method: "POST",
-        // headers: {"Content-type": "application/json"},
-        // body: JSON.stringify({query: message, history: history}),
-        // })
-        // .then(async (res) => {
-        //     const resJson = await res.json();
-        //     setHistory((oldHistory) => [...oldHistory, resJson]);
-        // })
-        // .catch((err) => {
-        //     alert(err);
-        // });
     };
 
     useEffect(() => {
@@ -179,7 +127,7 @@ const MainChat = () => {
 
     return(
 
-        <div className="flex flex-col gap-8 w-full items-center flex-grow max-h-full overflow-visible">
+      <div className="flex flex-col gap-8 w-full items-center flex-grow max-h-full overflow-visible">
         <h1 className=" text-4xl text-transparent font-extralight bg-clip-text bg-gradient-to-r from-violet-800 to-fuchsia-500">
           SFML Chat
         </h1>
@@ -201,10 +149,10 @@ const MainChat = () => {
                       key={idx}
                       className="flex gap-2"
                     >
-                      {/* <img
-                        src="images/assistant-avatar.png"
+                      <img
+                        src="images/chatbot_pfp.jpg"
                         className="h-12 w-12 rounded-full"
-                      /> */}
+                      />
                       <div className="w-auto max-w-xl break-words bg-white rounded-b-xl rounded-tr-xl text-black p-6 shadow-[0_10px_40px_0px_rgba(0,0,0,0.15)]">
                         <p className="text-sm font-medium text-violet-500 mb-2">
                           AI assistant

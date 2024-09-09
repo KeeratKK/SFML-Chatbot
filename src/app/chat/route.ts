@@ -46,12 +46,4 @@ export async function POST(req: Request) {
         },
     });
 
-    // const answer = await chain.invoke({
-    //     chat_history: history.map(h => h.content).join("\n"),
-    //     input: question,
-    // });
-
-    // console.log(answer.answer);
-
-    // return NextResponse.json({role: "assistant", "content": answer.answer});
 }

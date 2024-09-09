@@ -1,0 +1,13 @@
+services:
+  app:
+    image: sfml-chatbot-app
+    build:
+      context: ./
+      target: dev
+      dockerfile: Dockerfile
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    ports:
+      - "3000:3000"

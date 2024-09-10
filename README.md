@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a SFML Chatbot that allows users to chat with SFML documentation. If you have any questions about a specific method or property, the SFML assistant will help answer your query. You can also prompt it to give you sample code in case you do not understand how a specific method or function works.
 
-## Getting Started
+This project aims to help newer programming students who are using code documentation for the very first time. Understanding documentation can be challenging, so this chatbot is designed to help students navigate and engage with it more easily.
 
-First, run the development server:
+The chatbot uses MongoDB's Atlas vector database to store and retrieve relevant information about SFML 2.5.1 documentation. 
+## Getting Started - Using NPM
+
+1. Clone the repo on to your local computer.
+
+```bash
+git clone [github link]
+```
+2. Install all the rquired packages using:
+
+```bash
+npm install
+```
+3. Set up your .env file. I have uploaded a .env.example file that shows you the environment variables you need.
+   - Make sure you have an Open AI account and a usable Open AI key
+   - The rest of the keys are related to your Mongo DB configuration (fill them out accordingly)
+   - CHANGE ```.env.example``` to ```.env```
+
+4. Run your development server using:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+
+## Getting Started - Using Dockerfile
+
+1. Clone the repo on to your local computer.
+
+```bash
+git clone [github link]
+```
+2. Build your Docker image. 
+
+```bash
+docker build -t <insert-whatever-image-name-here> .
+```
+3. Finally, we can run the image:
+
+```bash
+docker run -p 3000:3000 <image-name>
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

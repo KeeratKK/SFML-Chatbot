@@ -1,3 +1,4 @@
+## Purpose
 This is a SFML Chatbot that allows users to chat with SFML documentation. If you have any questions about a specific method or property, the SFML assistant will help answer your query. You can also prompt it to give you sample code in case you do not understand how a specific method or function works.
 
 This project aims to help newer programming students who are using code documentation for the very first time. Understanding documentation can be challenging, so this chatbot is designed to help students navigate and engage with it more easily.

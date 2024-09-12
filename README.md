@@ -3,6 +3,16 @@ This is a SFML Chatbot that allows users to chat with SFML documentation. If you
 This project aims to help newer programming students who are using code documentation for the very first time. Understanding documentation can be challenging, so this chatbot is designed to help students navigate and engage with it more easily.
 
 The chatbot uses MongoDB's Atlas vector database to store and retrieve relevant information about SFML 2.5.1 documentation. 
+
+## Demo
+
+
+
+https://github.com/user-attachments/assets/c5866ef3-9694-4381-9ba2-21b0a228ee00
+
+
+
+
 ## Getting Started - Using NPM
 
 1. Clone the repo on to your local computer.
